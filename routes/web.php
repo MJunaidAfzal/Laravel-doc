@@ -28,7 +28,12 @@ Route::get('/privacy-policy' , [FrontendController::class , 'privacyPolicy'])->n
 //AUTH
 Route::get('/login' , [AuthController::class , 'login'])->name('login');
 Route::get('/patient-register' , [AuthController::class , 'patientRegister'])->name('patient-register');
+Route::post('/patient-store' , [AuthController::class , 'patientStore'])->name('patient-store');
 Route::get('/doctor-register' , [AuthController::class , 'doctorRegister'])->name('doctor-register');
+Route::post('/doctor-store' , [AuthController::class , 'doctorStore'])->name('doctor-store');
+Route::post('/auth-login', [AuthController::class, 'authLogin'])->name('auth-login');
+
+
 
 
 Route::post('/send-signal', [CallController::class, 'sendSignal']);

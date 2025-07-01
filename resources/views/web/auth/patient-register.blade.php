@@ -18,31 +18,61 @@
 										<div class="login-header">
 											<h3>Patient Register <a href="{{ route('doctor-register') }}">Are you a Doctor?</a></h3>
 										</div>
-										<form action="patient-register-step1.html">
-											<div class="mb-3">
-												<label class="form-label">Name</label>
-												<input type="text" class="form-control">
-											</div>
-                                            <div class="mb-3">
-												<label class="form-label">Email</label>
-												<input type="email" class="form-control">
-											</div>
-											<div class="mb-3">
-												<label class="form-label">Phone</label>
-												<input class="form-control form-control-lg group_formcontrol form-control-phone" id="phone" name="phone" type="text">
-											</div>
-											<div class="mb-3">
-												<div class="form-group-flex">
-													<label class="form-label">Create Password</label>
-												</div>
-												<div class="pass-group">
-													<input type="password" class="form-control pass-input">
-													<span class="feather-eye-off toggle-password"></span>
-												</div>
-											</div>
-											<div class="mb-3">
-												<button class="btn btn-primary-gradient w-100" type="submit">Sign Up</button>
-											</div>
+										<form method="POST" action="{{ route('patient-store') }}">
+                                                @csrf
+                                                <input type="hidden" name="role_id" value="2">
+
+                                                <div class="mb-3">
+                                                    <label class="form-label">Name</label>
+                                                    <input 
+                                                        type="text" 
+                                                        name="name" 
+                                                        class="form-control @error('name') is-invalid @enderror"
+                                                        value="{{ old('name') }}"
+                                                        required
+                                                    >
+                                                    @error('name')
+                                                        <span class="invalid-feedback d-block">{{ $message }}</span>
+                                                    @enderror
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label class="form-label">Email</label>
+                                                    <input 
+                                                        type="email" 
+                                                        name="email" 
+                                                        class="form-control @error('email') is-invalid @enderror"
+                                                        value="{{ old('email') }}"
+                                                        required
+                                                    >
+                                                    @error('email')
+                                                        <span class="invalid-feedback d-block">{{ $message }}</span>
+                                                    @enderror
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <div class="form-group-flex">
+                                                        <label class="form-label">Create Password</label>
+                                                    </div>
+                                                    <div class="pass-group">
+                                                        <input 
+                                                            type="password" 
+                                                            name="password" 
+                                                            class="form-control pass-input @error('password') is-invalid @enderror"
+                                                            required
+                                                        >
+                                                        <span class="feather-eye-off toggle-password"></span>
+                                                    </div>
+                                                    @error('password')
+                                                        <span class="invalid-feedback d-block">{{ $message }}</span>
+                                                    @enderror
+                                                </div>
+
+                                               
+
+                                                <div class="mb-3">
+                                                    <button class="btn btn-primary-gradient w-100" type="submit">Sign Up</button>
+                                                </div>
 											<div class="login-or">
 												<span class="or-line"></span>
 												<span class="span-or">or</span>

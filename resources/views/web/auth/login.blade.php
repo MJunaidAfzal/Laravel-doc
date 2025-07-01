@@ -19,21 +19,39 @@
 										<div class="login-header">
 											<h3>Login <span>Doccure</span></h3>
 										</div>
-										<form action="index.html">
-											<div class="mb-3">
-												<label class="form-label">E-mail</label>
-												<input type="text" class="form-control">
-											</div>
-											<div class="mb-3">
-												<div class="form-group-flex">
-													<label class="form-label">Password</label>
-													<a href="forgot-password.html.htm" class="forgot-link">Forgot password?</a>
-												</div>
-												<div class="pass-group">
-													<input type="password" class="form-control pass-input">
-													<span class="feather-eye-off toggle-password"></span>
-												</div>
-											</div>
+
+										<form method="POST" action="{{ route('auth-login') }}">
+											    @csrf
+													<div class="mb-3">
+														<label class="form-label">E-mail</label>
+														<input 
+															type="email"
+															name="email"
+															class="form-control @error('email') is-invalid @enderror"
+															value="{{ old('email') }}"
+															required
+															autofocus
+														>
+														@error('email')
+															<span class="invalid-feedback d-block">{{ $message }}</span>
+														@enderror
+													</div>
+
+													<div class="mb-3">
+														<label class="form-label">Password</label>
+														<div class="pass-group">
+														<input 
+															type="password"
+															name="password"
+															class="form-control @error('password') is-invalid @enderror"
+															required
+														>
+														@error('password')
+															<span class="invalid-feedback d-block">{{ $message }}</span>
+														@enderror
+															<span class="feather-eye-off toggle-password"></span>
+														</div>
+													</div>
 											<div class="mb-3 form-check-box">
 												<div class="form-group-flex">
 													<div class="form-check mb-0">
@@ -66,7 +84,7 @@
 												</a>
 											</div>
 											<div class="account-signup">
-												<p>Don't have an account ? <a href="register.html.htm">Sign up</a></p>
+												<p>Don't have an account ? <a href="{{ route('patient-register') }}">Sign up</a></p>
 											</div>
 										</form>
 									</div>

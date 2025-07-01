@@ -262,6 +262,7 @@
 										</form>
 									</div>
 								</li>
+								@guest
 								<li>
 									<a href="{{ route('login') }}" class="btn btn-md btn-primary-gradient d-inline-flex align-items-center rounded-pill"><i class="isax isax-lock-1 me-1"></i>Login</a>
 								</li>
@@ -285,7 +286,13 @@
 												
 											</ul>
 										</li>
-
+									@endguest
+									@auth
+									<li>
+									<a href="#" class="btn btn-md btn-primary-gradient d-inline-flex align-items-center rounded-pill"><i class="isax isax-user me-1"></i>Hello! {{ auth()->user()->name }}</a>
+									</li>
+										
+									@endauth
 							
 							</ul>
 						</div>
