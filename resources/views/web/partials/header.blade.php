@@ -1,4 +1,76 @@
-			<!-- Header -->
+<style>
+	/* Show dropdown on hover */
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+</style>
+
+{{-- <div class="header-topbar">
+				<div class="container">
+					<div class="topbar-info">
+						<div class="d-flex align-items-center gap-3 header-info">
+							<p><i class="isax isax-message-text5 me-1"></i><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="355c5b535a75504d54584559501b565a58">[email&#160;protected]</a></p>
+							<p><i class="isax isax-call5 me-1"></i>+1 66589 14556</p>
+						</div>
+						<ul>
+							<li class="header-theme">
+								<a href="javascript:void(0);" id="dark-mode-toggle" class="theme-toggle">
+									<i class="isax isax-sun-1"></i>
+								</a>
+								<a href="javascript:void(0);" id="light-mode-toggle" class="theme-toggle activate">
+									<i class="isax isax-moon"></i>
+								</a>
+							</li>
+							<li class="d-inline-flex align-items-center drop-header">
+								<div class="dropdown dropdown-country me-3">
+									<a href="javascript:void(0);" class="d-inline-flex align-items-center" data-bs-toggle="dropdown" aria-expanded="false">
+										<img src="assets/img/flags/us-flag.svg" class="me-2" alt="flag">
+									</a>
+									<ul class="dropdown-menu p-2 mt-2">
+										<li>
+											<a class="dropdown-item rounded d-flex align-items-center" href="javascript:void(0);">
+												<img src="assets/img/flags/us-flag.svg" class="me-2" alt="flag">ENG
+											</a>
+										</li>
+										<li>
+											<a class="dropdown-item rounded d-flex align-items-center" href="javascript:void(0);">
+												<img src="assets/img/flags/arab-flag.svg" class="me-2" alt="flag">ARA
+											</a>
+										</li>
+										<li>
+											<a class="dropdown-item rounded d-flex align-items-center" href="javascript:void(0);">
+												<img src="assets/img/flags/france-flag.svg" class="me-2" alt="flag">FRA
+											</a>
+										</li>
+									</ul>
+								</div>
+								<div class="dropdown dropdown-amt">
+									<a href="javascript:void(0);" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+										USD
+									</a>
+									<ul class="dropdown-menu p-2 mt-2">
+										<li><a class="dropdown-item rounded" href="javascript:void(0);">USD</a></li>
+										<li><a class="dropdown-item rounded" href="javascript:void(0);">YEN</a></li>
+										<li><a class="dropdown-item rounded" href="javascript:void(0);">EURO</a></li>
+									</ul>
+								</div>
+							</li>
+							<li class="social-header">
+								<div class="social-icon">
+									<a href="javascript:void(0);"><i class="fa-brands fa-facebook"></i></a>
+									<a href="javascript:void(0);"><i class="fa-brands fa-x-twitter"></i></a>
+									<a href="javascript:void(0);"><i class="fa-brands fa-instagram"></i></a>
+									<a href="javascript:void(0);"><i class="fa-brands fa-linkedin"></i></a>
+									<a href="javascript:void(0);"><i class="fa-brands fa-pinterest"></i></a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div> --}}
+
+<!-- Header -->
 			<header class="header header-custom header-fixed inner-header relative">
 				<div class="container">
 					<nav class="navbar navbar-expand-lg header-nav">
@@ -191,13 +263,30 @@
 									</div>
 								</li>
 								<li>
-									<a href="login.html" class="btn btn-md btn-primary-gradient d-inline-flex align-items-center rounded-pill"><i class="isax isax-lock-1 me-1"></i>Sign Up</a>
+									<a href="{{ route('login') }}" class="btn btn-md btn-primary-gradient d-inline-flex align-items-center rounded-pill"><i class="isax isax-lock-1 me-1"></i>Login</a>
 								</li>
-								<li>
-									<a href="register.html" class="btn btn-md btn-dark d-inline-flex align-items-center rounded-pill">
-										<i class="isax isax-user-tick me-1"></i>Register
-									</a>
-								</li>
+																		<!-- Make sure Bootstrap CSS is loaded in your layout -->
+										<li class="nav-item dropdown">
+											<a class="btn btn-md btn-dark d-inline-flex align-items-center rounded-pill dropdown-toggle"
+											href="#"
+											id="registerDropdown"
+											role="button"
+											data-bs-toggle="dropdown"
+											aria-expanded="false">
+												<i class="isax isax-user-tick me-1"></i> Register
+											</a>
+											
+											
+											<ul class="dropdown-menu" >
+													<ul class="submenu" aria-labelledby="registerDropdown">
+													<li><a href="{{ route('patient-register') }}">Patient Register</a></li><br>
+													<li style="margin-top: 10px"><a href="{{ route('doctor-register') }}">Doctor Register</a></li>
+												</ul>
+												
+											</ul>
+										</li>
+
+							
 							</ul>
 						</div>
 					</nav>
