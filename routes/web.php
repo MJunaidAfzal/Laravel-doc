@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CallController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Doctor\DashboardController;
+use App\Http\Controllers\Doctor\ProfileSettingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +34,27 @@ Route::post('/patient-store' , [AuthController::class , 'patientStore'])->name('
 Route::get('/doctor-register' , [AuthController::class , 'doctorRegister'])->name('doctor-register');
 Route::post('/doctor-store' , [AuthController::class , 'doctorStore'])->name('doctor-store');
 Route::post('/auth-login', [AuthController::class, 'authLogin'])->name('auth-login');
+Route::post('/logout', function () {
+    auth()->logout();
+    return redirect('/login');
+})->name('logout');
+
+
+//DOCTOR
+Route::prefix('doctor')->group(function () {
+    Route::get('/dashboard', [DashboardController::class , 'dashboard'])->name('doctor.dashboard');
+    Route::get('/profile-setting', [ProfileSettingController::class , 'profileSetting'])->name('doctor.profile-setting');
+    Route::get('/experience', [ProfileSettingController::class , 'experience'])->name('doctor.experience');
+    Route::get('/education', [ProfileSettingController::class , 'education'])->name('doctor.education');
+    Route::get('/award', [ProfileSettingController::class , 'award'])->name('doctor.award');
+    Route::get('/insurance', [ProfileSettingController::class , 'insurance'])->name('doctor.insurance');
+    Route::get('/clinic', [ProfileSettingController::class , 'clinic'])->name('doctor.clinic');
+    Route::get('/hours', [ProfileSettingController::class , 'hours'])->name('doctor.hours');
+    Route::get('/requests', [DashboardController::class , 'requests'])->name('doctor.requests');
+    Route::get('/appointments', [DashboardController::class , 'appointments'])->name('doctor.appointments');
+    Route::get('/appointments-detail', [DashboardController::class , 'appointmentsDetail'])->name('doctor.appointments-detail');
+    Route::get('/appointments-start', [DashboardController::class , 'appointmentStart'])->name('doctor.appointments-start');
+});
 
 
 

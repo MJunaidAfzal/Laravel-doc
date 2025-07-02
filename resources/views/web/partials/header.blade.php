@@ -25,22 +25,22 @@
 							<li class="d-inline-flex align-items-center drop-header">
 								<div class="dropdown dropdown-country me-3">
 									<a href="javascript:void(0);" class="d-inline-flex align-items-center" data-bs-toggle="dropdown" aria-expanded="false">
-										<img src="assets/img/flags/us-flag.svg" class="me-2" alt="flag">
+										<img src="{{asset('assets/img/flags/us-flag.svg" class="me-2" alt="flag">
 									</a>
 									<ul class="dropdown-menu p-2 mt-2">
 										<li>
 											<a class="dropdown-item rounded d-flex align-items-center" href="javascript:void(0);">
-												<img src="assets/img/flags/us-flag.svg" class="me-2" alt="flag">ENG
+												<img src="{{asset('assets/img/flags/us-flag.svg" class="me-2" alt="flag">ENG
 											</a>
 										</li>
 										<li>
 											<a class="dropdown-item rounded d-flex align-items-center" href="javascript:void(0);">
-												<img src="assets/img/flags/arab-flag.svg" class="me-2" alt="flag">ARA
+												<img src="{{asset('assets/img/flags/arab-flag.svg" class="me-2" alt="flag">ARA
 											</a>
 										</li>
 										<li>
 											<a class="dropdown-item rounded d-flex align-items-center" href="javascript:void(0);">
-												<img src="assets/img/flags/france-flag.svg" class="me-2" alt="flag">FRA
+												<img src="{{asset('assets/img/flags/france-flag.svg" class="me-2" alt="flag">FRA
 											</a>
 										</li>
 									</ul>
@@ -288,9 +288,209 @@
 										</li>
 									@endguest
 									@auth
-									<li>
-									<a href="#" class="btn btn-md btn-primary-gradient d-inline-flex align-items-center rounded-pill"><i class="isax isax-user me-1"></i>Hello! {{ auth()->user()->name }}</a>
-									</li>
+						
+								
+								<!-- Notifications -->
+								<li class="nav-item dropdown noti-nav me-3 pe-0">
+									<a href="#" class="dropdown-toggle active-dot active-dot-danger nav-link p-0" data-bs-toggle="dropdown">
+										<i class="isax isax-notification-bing"></i>
+									</a>
+									<div class="dropdown-menu notifications dropdown-menu-end ">
+										<div class="topnav-dropdown-header">
+											<span class="notification-title">Notifications</span>
+										</div>
+										<div class="noti-content">
+											<ul class="notification-list">
+												<li class="notification-message">
+													<a href="#">
+														<div class="notify-block d-flex">
+															<span class="avatar">
+																<img class="avatar-img" alt="Ruby perin" src="{{asset('assets/img/clients/client-01.jpg')}}">
+															</span>
+															<div class="media-body">
+																<h6>Travis Tremble <span class="notification-time">18.30 PM</span></h6>
+																<p class="noti-details">Sent a amount of $210 for his Appointment  <span class="noti-title">Dr.Ruby perin </span></p>
+															</div>
+														</div>
+													</a>
+												</li>
+												<li class="notification-message">
+													<a href="#">
+														<div class="notify-block d-flex">
+															<span class="avatar">
+																<img class="avatar-img" alt="Hendry Watt" src="{{asset('assets/img/clients/client-02.jpg')}}">
+															</span>
+															<div class="media-body">
+																<h6>Travis Tremble <span class="notification-time">12 Min Ago</span></h6>
+																<p class="noti-details"> has booked her appointment to  <span class="noti-title">Dr. Hendry Watt</span></p>
+															</div>
+														</div>
+													</a>
+												</li>
+												<li class="notification-message">
+													<a href="#">
+														<div class="notify-block d-flex">
+															<div class="avatar">
+																<img class="avatar-img" alt="Maria Dyen" src="{{asset('assets/img/clients/client-03.jpg')}}">
+															</div>
+															<div class="media-body">
+																<h6>Travis Tremble <span class="notification-time">6 Min Ago</span></h6>
+																<p class="noti-details"> Sent a amount  $210 for his Appointment   <span class="noti-title">Dr.Maria Dyen</span></p>
+															</div>
+														</div>
+													</a>
+												</li>
+												<li class="notification-message">
+													<a href="#">
+														<div class="notify-block d-flex">
+															<div class="avatar avatar-sm">
+																<img class="avatar-img" alt="client-image" src="{{asset('assets/img/clients/client-04.jpg')}}">
+															</div>
+															<div class="media-body">
+																<h6>Travis Tremble <span class="notification-time">8.30 AM</span></h6>
+																<p class="noti-details"> Send a message to his doctor</p>
+															</div>
+														</div>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</li>
+								<!-- /Notifications -->
+
+								<!-- Messages -->
+								<li class="nav-item noti-nav me-3 pe-0">
+									<a href="chat-doctor.html.htm" class="dropdown-toggle nav-link active-dot active-dot-success p-0">
+										<i class="isax isax-message-2"></i>
+									</a>
+								</li>
+								<!-- /Messages -->
+
+								<!-- Cart -->
+								<li class="nav-item dropdown noti-nav view-cart-header me-3 pe-0">
+									<a href="#" class="dropdown-toggle nav-link active-dot active-dot-purple p-0 position-relative" data-bs-toggle="dropdown">
+										<i class="isax isax-shopping-cart"></i>
+									</a>
+									<div class="dropdown-menu notifications dropdown-menu-end">
+										<div class="shopping-cart">
+										<ul class="shopping-cart-items list-unstyled">
+											<li class="clearfix">
+												<div class="close-icon"><i class="fa-solid fa-circle-xmark"></i></div>
+												<a href="product-description.html.htm"><img class="avatar-img rounded" src="{{asset('assets/img/products/product.jpg')}}" alt="User Image"></a>
+												<a href="product-description.html.htm" class="item-name">Benzaxapine Croplex</a>
+												<span class="item-price">$849.99</span>
+												<span class="item-quantity">Quantity: 01</span>
+											</li>
+
+											<li class="clearfix">
+												<div class="close-icon"><i class="fa-solid fa-circle-xmark"></i></div>
+												<a href="product-description.html.htm"><img class="avatar-img rounded" src="{{asset('assets/img/products/product1.jpg')}}" alt="User Image"></a>
+												<a href="product-description.html.htm" class="item-name">Ombinazol Bonibamol</a>
+												<span class="item-price">$1,249.99</span>
+												<span class="item-quantity">Quantity: 01</span>
+											</li>
+
+											<li class="clearfix">
+												<div class="close-icon"><i class="fa-solid fa-circle-xmark"></i></div>
+												<a href="product-description.html.htm"><img class="avatar-img rounded" src="{{asset('assets/img/products/product2.jpg')}}" alt="User Image"></a>
+												<a href="product-description.html.htm" class="item-name">Dantotate Dantodazole</a>
+												<span class="item-price">$129.99</span>
+												<span class="item-quantity">Quantity: 01</span>
+											</li>
+										</ul>
+										<div class="booking-summary pt-3">
+											<div class="booking-item-wrap">
+												<ul class="booking-date">
+													<li>Subtotal <span>$5,877.00</span></li>
+													<li>Shipping <span>$25.00</span></li>
+													<li>Tax <span>$0.00</span></li>
+													<li>Total <span>$5.2555</span></li>
+												</ul>
+												<div class="booking-total">
+													<ul class="booking-total-list text-align">
+														<li>
+															<div class="clinic-booking pt-3">
+																<a class="apt-btn" href="cart.html.htm">View Cart</a>
+															</div>
+														</li>
+														<li>
+															<div class="clinic-booking pt-3">
+																<a class="apt-btn" href="product-checkout.html.htm">Checkout</a>
+															</div>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+										</div>
+									</div>
+								</li>
+								<!-- /Cart -->
+								@if(auth()->user()->role->name == 'doctor')
+
+								
+								<!-- Doctor Menu -->
+								<li class="nav-item dropdown has-arrow logged-item">
+									<a href="#" class="nav-link ps-0" data-bs-toggle="dropdown">
+										<span class="user-img">
+											<img class="rounded-circle" src="{{asset('assets/img/doctors-dashboard/doctor-profile-img.jpg')}}" width="31" alt="Darren Elder">
+										</span>
+									</a>
+									<div class="dropdown-menu dropdown-menu-end">
+										<div class="user-header">
+											<div class="avatar avatar-sm">
+												<img src="{{asset('assets/img/doctors-dashboard/doctor-profile-img.jpg')}}" alt="User Image" class="avatar-img rounded-circle">
+											</div>
+											<div class="user-text">
+												<h6>{{ auth()->user()->name }}</h6>
+										<p class="text-muted mb-0">{{ ucfirst(auth()->user()->role?->name) }}</p>
+											</div>
+										</div>
+										<a class="dropdown-item" href="{{ route('doctor.dashboard') }}">Dashboard</a>
+										<a class="dropdown-item" href="{{ route('doctor.profile-setting') }}">Profile Settings</a>
+										<form method="POST" action="{{ route('logout') }}">
+											@csrf
+											<button type="submit" class="dropdown-item">Logout</button>
+										</form>
+
+									</div>
+								</li>
+								<!-- /Doctor Menu -->
+
+
+								@elseif(auth()->user()->role->name == 'patient')
+
+
+								<!-- Patient Menu -->
+								<li class="nav-item dropdown has-arrow logged-item">
+									<a href="#" class="nav-link ps-0" data-bs-toggle="dropdown">
+										<span class="user-img">
+											<img class="rounded-circle" src="{{asset('assets/img/doctors-dashboard/doctor-profile-img.jpg')}}" width="31" alt="Darren Elder">
+										</span>
+									</a>
+									<div class="dropdown-menu dropdown-menu-end">
+										<div class="user-header">
+											<div class="avatar avatar-sm">
+												<img src="{{asset('assets/img/doctors-dashboard/doctor-profile-img.jpg')}}" alt="User Image" class="avatar-img rounded-circle">
+											</div>
+											<div class="user-text">
+												<h6>{{ auth()->user()->name }}</h6>
+										<p class="text-muted mb-0">{{ ucfirst(auth()->user()->role?->name) }}</p>
+											</div>
+										</div>
+										<a class="dropdown-item" href="#">Dashboard</a>
+										<a class="dropdown-item" href="doctor-profile-settings.html.htm">Profile Settings</a>
+										<form method="POST" action="{{ route('logout') }}">
+											@csrf
+											<button type="submit" class="dropdown-item">Logout</button>
+										</form>
+
+									</div>
+								</li>
+								<!-- /Patient Menu -->
+
+								@endif
 										
 									@endauth
 							
