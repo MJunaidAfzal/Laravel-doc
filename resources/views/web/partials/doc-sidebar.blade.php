@@ -6,7 +6,7 @@
 											<img src="{{asset('assets/img/doctors-dashboard/doctor-profile-img.jpg')}}" alt="User Image">
 										</a>
 										<div class="profile-det-info">
-											<h3><a href="doctor-profile.html.htm">Dr Edalin Hendry</a></h3>
+											<h3><a href="doctor-profile.html.htm">{{ auth()->user()->name }}</a></h3>
 											<div class="patient-details">
 												<h5 class="mb-0">BDS, MDS - Oral & Maxillofacial Surgery</h5>
 											</div>
@@ -46,37 +46,37 @@
 												</a>
 											</li>
 											<li>
-												<a href="my-patients.html.htm">
+												<a href="{{ route('doctor.my-patient') }}">
 													<i class="fa-solid fa-user-injured"></i>
 													<span>My Patients</span>
 												</a>
 											</li>
 											<li>
-												<a href="doctor-specialities.html.htm">
+												<a href="{{ route('doctor.service') }}">
 													<i class="isax isax-clock"></i>
 													<span>Specialties & Services</span>
 												</a>
 											</li>
 											<li>
-												<a href="reviews.html.htm">
+												<a href="{{ route('doctor.reviews') }}">
 													<i class="isax isax-star-1"></i>
 													<span>Reviews</span>
 												</a>
 											</li>
 											<li>
-												<a href="accounts.html.htm">
+												<a href="{{ route('doctor.account') }}">
 													<i class="isax isax-profile-tick"></i>
 													<span>Accounts</span>
 												</a>
 											</li>
 											<li>
-												<a href="invoices.html.htm">
+												<a href="{{ route('doctor.invoice') }}">
 													<i class="isax isax-document-text"></i>
 													<span>Invoices</span>
 												</a>
 											</li>
 											<li>
-												<a href="doctor-payment.html.htm">
+												<a href="{{ route('doctor.payout') }}">
 													<i class="fa-solid fa-money-bill-1"></i>
 													<span>Payout Settings</span>
 												</a>
@@ -95,7 +95,7 @@
 												</a>
 											</li>
 											<li>
-												<a href="social-media.html.htm">
+												<a href="{{ route('doctor.social-media') }}">
 													<i class="fa-solid fa-shield-halved"></i>
 													<span>Social Media</span>
 												</a>

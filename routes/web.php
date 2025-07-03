@@ -54,6 +54,14 @@ Route::prefix('doctor')->group(function () {
     Route::get('/appointments', [DashboardController::class , 'appointments'])->name('doctor.appointments');
     Route::get('/appointments-detail', [DashboardController::class , 'appointmentsDetail'])->name('doctor.appointments-detail');
     Route::get('/appointments-start', [DashboardController::class , 'appointmentStart'])->name('doctor.appointments-start');
+    Route::get('/my-patients', [DashboardController::class , 'myPatient'])->name('doctor.my-patient');
+    Route::get('/patient-profile', [DashboardController::class , 'patientProfile'])->name('doctor.patient-profile');
+    Route::get('/services', [DashboardController::class , 'services'])->name('doctor.service');
+    Route::get('/reviews', [DashboardController::class , 'reviews'])->name('doctor.reviews');
+    Route::get('/account', [DashboardController::class , 'account'])->name('doctor.account');
+    Route::get('/invoice', [DashboardController::class , 'invoice'])->name('doctor.invoice');
+    Route::get('/payout', [DashboardController::class , 'payout'])->name('doctor.payout');
+    Route::get('/social-media', [DashboardController::class , 'socialMedia'])->name('doctor.social-media');
 });
 
 

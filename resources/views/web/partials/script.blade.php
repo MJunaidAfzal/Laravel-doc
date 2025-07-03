@@ -32,3 +32,6 @@
 		<script src="{{ asset('assets/js/script.js')}}" type="f29c324c0ea6a8beadc050d1-text/javascript"></script>
 
 	    <script src="{{ asset('assets/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js')}}" data-cf-settings="f29c324c0ea6a8beadc050d1-|49" defer=""></script>
+
+
+		
