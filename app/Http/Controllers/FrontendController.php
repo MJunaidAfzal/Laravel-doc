@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Speciality;
 
 class FrontendController extends Controller
 {
     public function index(){
         $data['title'] = 'Home Page';
+        $data['specialities'] = Speciality::get();
         return view('web.index',$data);
     }
 
